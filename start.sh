@@ -9,6 +9,6 @@ gitlab-runner register \
       --token "$CI_SERVER_TOKEN" \
       --executor "$RUNNER_EXECUTOR" \
       --tag-list "$RUNNER_TAG_LIST" \
-      --name "$RUNNER_NAME"s
+      --name "$RUNNER_NAME"
 
 gitlab-runner run;
