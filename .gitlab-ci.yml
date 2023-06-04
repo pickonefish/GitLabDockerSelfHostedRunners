@@ -29,6 +29,7 @@ version-job:
     - DATE=`date '+%Y%m%d.%H%M%S'`
     - COMMIT_HASH=`git describe --always --abbrev=7`
     - VERSION_TAG=$DATE-$COMMIT_HASH
+    - echo $VERSION_TAG
     #- TAG=$(containerRegistryItDocker)/$(imageRepository):$IMAGE_TAG
     #- echo $IMAGE_TAG | tee $(versionFolder)/version.txt
     #- echo $(jq -n --arg version "$IMAGE_TAG" --arg image "$(imageRepository):$IMAGE_TAG" '{ version:$version, image:$image }') | tee $(versionFolder)/version.json
