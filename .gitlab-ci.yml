@@ -23,7 +23,7 @@ stages:          # List of stages for jobs, and their order of execution
 build-job:       # This job runs in the build stage, which runs first.
   stage: build
   tags:
-    - shared
+    - self-hosted
   script:
     - echo "Compiling the code..."
     - echo "Compile complete."
@@ -31,7 +31,7 @@ build-job:       # This job runs in the build stage, which runs first.
 deploy-job:      # This job runs in the deploy stage.
   stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
   tags:
-    - shared
+    - self-hosted
   environment: production
   script:
     - echo "Deploying application..."
