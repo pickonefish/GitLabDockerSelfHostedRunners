@@ -11,4 +11,4 @@ gitlab-runner register \
       --tag-list "$RUNNER_TAG_LIST" \
       --name "$RUNNER_NAME"
 
-gitlab-runner run;
+gitlab-runner --debug run;
