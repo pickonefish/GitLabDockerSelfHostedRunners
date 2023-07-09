@@ -76,12 +76,15 @@ RUN tar xzf /tmp/s6-overlay-amd64.tar.gz -C / && \
 
 SHELL ["/bin/bash", "-c"]
 
+COPY fnm/install ./fnm/install
+
 # Install fnm and initiate it
 RUN \
   apt-get update && \
   apt-get install -y curl unzip gnupg2 && \
   # install fnm
-  curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir "/opt/fnm" --skip-shell && \
+  # curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir "/opt/fnm" --skip-shell && \
+  fnm/install --install-dir "/opt/fnm" --skip-shell && \
   ln -s /opt/fnm/fnm /usr/bin/ && chmod +x /usr/bin/fnm
 
 RUN \
