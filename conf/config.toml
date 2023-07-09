@@ -1,0 +1,10 @@
+concurrent = 1
+check_interval = 0
+
+[[runners]]
+  name = "helloworld"
+  url = "https://gitlab.com"
+  token = ""
+  executor = "shell"
+  [runners.cache]
+ 

@@ -1,0 +1,14 @@
+version: '2'
+services:
+  gitlab-docker-self-hosted-runner:
+    container_name: gitlab-runner
+    image: pickonefish/gitlab-docker-self-hosted-runner:20230604
+    environment:
+      - CI_SERVER_URL=https://gitlab.com
+      - CI_SERVER_TOKEN=
+      - RUNNER_NAME=helloworld
+      - RUNNER_EXECUTOR=shell
+      - RUNNER_TAG_LIST=self-hosted
+    # volumes:
+      # - '/var/run/docker.sock:/var/run/docker.sock'
+      # - './conf:/etc/gitlab-runner'
